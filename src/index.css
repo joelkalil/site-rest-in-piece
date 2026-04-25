@@ -31,6 +31,7 @@ body {
   font-family: 'Crimson Text', serif;
   min-height: 100vh;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Custom scrollbar */
@@ -57,39 +58,84 @@ body {
   color: var(--color-gold-light);
 }
 
+/* ── Readability: body text (Crimson Text paragraphs) ── */
+.page-bg p {
+  font-weight: 600;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+/* ── Readability: headings (Cinzel / Cinzel Decorative) ── */
+.page-bg h1,
+.page-bg h2,
+.page-bg h3 {
+  text-shadow:
+    0 0 20px rgba(0, 0, 0, 0.95),
+    0 2px 6px rgba(0, 0, 0, 1),
+    1px 1px 0px rgba(0, 0, 0, 0.8);
+}
+
+/* Hero title — white with gold glow (text-fill-color stays opaque so text-shadow works) */
+@keyframes heroGlow {
+  0%, 100% {
+    text-shadow:
+      0 0 30px rgba(201, 168, 76, 0.6),
+      0 2px 8px rgba(0, 0, 0, 1),
+      0 4px 20px rgba(0, 0, 0, 0.95);
+  }
+  50% {
+    text-shadow:
+      0 0 50px rgba(201, 168, 76, 1.0),
+      0 0 80px rgba(255, 220, 100, 0.5),
+      0 2px 8px rgba(0, 0, 0, 1),
+      0 4px 20px rgba(0, 0, 0, 0.95);
+  }
+}
+
+.hero-title {
+  color: #ffffff;
+  font-family: 'Cinzel Decorative', cursive;
+  -webkit-text-stroke: 0.5px rgba(201, 168, 76, 0.6);
+  animation: heroGlow 3s ease-in-out infinite;
+}
+
 /* Gold shimmer animation for headings */
 @keyframes goldShimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
 }
 
 .shimmer-gold {
   background: linear-gradient(
     90deg,
-    var(--color-gold-dark) 0%,
-    var(--color-gold-light) 40%,
+    var(--color-gold) 0%,
+    var(--color-gold-light) 35%,
     #fff8dc 50%,
-    var(--color-gold-light) 60%,
-    var(--color-gold-dark) 100%
+    var(--color-gold-light) 65%,
+    var(--color-gold) 100%
   );
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: goldShimmer 4s linear infinite;
+  /* Shadow renders behind the transparent gradient fill — adds depth without hiding the shimmer */
+  text-shadow:
+    0 0 20px rgba(0, 0, 0, 0.95),
+    0 2px 6px rgba(0, 0, 0, 1),
+    1px 1px 0px rgba(0, 0, 0, 0.8);
 }
 
 /* Page background pattern */
 .page-bg {
   position: relative;
-  background-image: url('/images/background_site.png');
+  background-image: url('/images/background.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   min-height: 100vh;
 }
 
-/* Overlay is now rendered as a div inside PageWrapper (supports per-page color) */
+/* Overlay is rendered as a div inside PageWrapper (supports per-page color) */
 .page-bg > * {
   position: relative;
   z-index: 1;

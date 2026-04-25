@@ -89,7 +89,7 @@ function MemberCard({ member, index }: MemberCardProps) {
       {/* Text */}
       <div className="flex-1 flex flex-col gap-4">
         <h3
-          className="font-cinzel text-xl md:text-2xl shimmer-gold"
+          className="font-cinzel text-xl md:text-2xl hero-title"
           style={{ fontFamily: '"Cinzel Decorative", serif' }}
         >
           {member.name}

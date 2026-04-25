@@ -151,28 +151,21 @@ export default function HallDaFama() {
 
           {/* Award grid:
               Row 1: MVP (full width)
-              Row 2: Atacante | Defensor | Apoiador
-              Row 3: Snipador (full width) */}
-          <div className="grid grid-cols-3 gap-8 w-full px-2">
+              Row 2: Atacante | Defensor | Apoiador | Snipador (4 cols) */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto px-6 w-full">
 
             {/* MVP — linha inteira */}
-            <div className="col-span-3 flex justify-center">
+            <div className="col-span-2 md:col-span-4 flex justify-center">
               <div className="w-full max-w-sm">
                 <AwardCard {...mvp} />
               </div>
             </div>
 
-            {/* Atacante · Defensor · Apoiador */}
+            {/* Atacante · Defensor · Apoiador · Snipador */}
             <AwardCard {...atacante} />
             <AwardCard {...defensor} />
             <AwardCard {...apoiador} />
-
-            {/* Snipador — linha inteira */}
-            <div className="col-span-3 flex justify-center">
-              <div className="w-full max-w-sm">
-                <AwardCard {...snipador} />
-              </div>
-            </div>
+            <AwardCard {...snipador} />
 
           </div>
 

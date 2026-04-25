@@ -39,8 +39,7 @@ export default function Home() {
 
           {/* Title */}
           <motion.h1
-            className="font-cinzel text-3xl md:text-5xl lg:text-6xl tracking-widest shimmer-gold leading-tight"
-            style={{ fontFamily: '"Cinzel Decorative", serif' }}
+            className="font-cinzel text-3xl md:text-5xl lg:text-6xl tracking-widest hero-title leading-tight"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}

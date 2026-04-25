@@ -6,7 +6,7 @@ export default function SectionTitle({ title }: SectionTitleProps) {
   return (
     <div className="flex flex-col items-center gap-3 mb-10">
       <h2
-        className="font-cinzel text-2xl md:text-3xl text-center tracking-widest shimmer-gold"
+        className="font-cinzel text-2xl md:text-3xl text-center tracking-widest hero-title"
         style={{ fontFamily: '"Cinzel Decorative", serif' }}
       >
         {title}

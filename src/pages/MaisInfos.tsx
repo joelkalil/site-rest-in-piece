@@ -5,7 +5,7 @@ import SectionTitle from '../components/SectionTitle'
 import GoldDivider from '../components/GoldDivider'
 
 const BASE = '/images/mais_infos'
-const SHIRT_IMAGES = ['blusas_1.jpg', 'blusas_2.jpg']
+const SHIRT_IMAGES = ['blusas_1.png', 'blusas_2.png']
 const PIX_KEY = '21982861956'
 
 // ─── PIX Block ────────────────────────────────────────────────────────────────

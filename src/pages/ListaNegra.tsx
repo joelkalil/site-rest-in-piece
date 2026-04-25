@@ -54,8 +54,8 @@ function TraitorCard({ name }: TraitorCardProps) {
       whileHover={{ scale: 1.03, borderColor: '#cc3333', boxShadow: '0 0 12px rgba(204,51,51,0.4)' }}
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
       style={{
-        background: 'rgba(40,0,0,0.8)',
-        border: '1px solid rgba(180,0,0,0.5)',
+        background: 'rgba(20,0,0,0.92)',
+        border: '1px solid rgba(180,0,0,0.7)',
         borderRadius: '4px',
         padding: '8px 16px',
         display: 'flex',
@@ -70,9 +70,11 @@ function TraitorCard({ name }: TraitorCardProps) {
         style={{
           fontFamily: 'Cinzel, serif',
           fontSize: '0.78rem',
+          fontWeight: 700,
           color: '#e0a0a0',
           textAlign: 'center',
-          letterSpacing: '0.04em',
+          letterSpacing: '0.05em',
+          textShadow: '0 1px 6px rgba(0,0,0,1)',
         }}
       >
         {name}
@@ -84,7 +86,7 @@ function TraitorCard({ name }: TraitorCardProps) {
 
 export default function ListaNegra() {
   return (
-    <PageWrapper bgImage="/images/lista_negra/background.png" overlayColor="rgba(0,0,0,0.70)">
+    <PageWrapper bgImage="/images/lista_negra/background.png" overlayColor="rgba(0,0,0,0.78)">
       <section className="min-h-screen px-4 py-24">
         <div className="max-w-5xl mx-auto flex flex-col items-center gap-10">
 
@@ -114,7 +116,11 @@ export default function ListaNegra() {
           <div className="flex flex-col items-center gap-3 mb-2 w-full">
             <h2
               className="text-2xl md:text-3xl text-center tracking-widest"
-              style={{ fontFamily: '"Cinzel Decorative", serif', color: '#cc3333' }}
+              style={{
+                fontFamily: '"Cinzel Decorative", serif',
+                color: '#cc3333',
+                textShadow: '0 0 20px rgba(0,0,0,0.95), 0 2px 6px rgba(0,0,0,1), 1px 1px 0px rgba(0,0,0,0.8)',
+              }}
             >
               LISTA NEGRA
             </h2>
