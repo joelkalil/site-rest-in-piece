@@ -4,25 +4,14 @@ import { awards, type Award } from '../data/awards'
 
 const BASE = '/images/hall_da_fama'
 
-const containerVariants = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.1 } },
-}
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.45 } },
-}
-
 function AwardCard({ badgeImage, title, winner }: Award) {
   return (
     <motion.div
-      variants={cardVariants}
-      whileHover={{
-        scale: 1.03,
-        boxShadow: '0 8px 30px rgba(201,168,76,0.25)',
-      }}
-      transition={{ type: 'spring', stiffness: 280, damping: 22 }}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ duration: 0.45 }}
+      whileHover={{ scale: 1.03, boxShadow: '0 8px 30px rgba(201,168,76,0.25)' }}
       style={{
         background: 'rgba(15,10,0,0.85)',
         border: '1px solid var(--color-border)',
@@ -125,10 +114,13 @@ function AwardCard({ badgeImage, title, winner }: Award) {
 }
 
 export default function HallDaFama() {
-  const [mvp, ...rest] = awards
+  const [mvp, atacante, defensor, apoiador, snipador] = awards
 
   return (
-    <PageWrapper overlayColor="rgba(20,10,0,0.80)">
+    <PageWrapper
+      bgImage="/images/hall_da_fama/background_trophies.png"
+      overlayColor="rgba(20,10,0,0.80)"
+    >
       <section className="min-h-screen px-4 py-24">
         <div className="flex flex-col items-center gap-10 max-w-5xl mx-auto">
 
@@ -157,29 +149,32 @@ export default function HallDaFama() {
             Todo mês, os guerreiros que mais se destacaram em batalha são imortalizados aqui.
           </p>
 
-          {/* Award grid */}
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full px-2"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: '-60px' }}
-          >
-            {/* MVP — full width spotlight */}
-            <motion.div
-              variants={cardVariants}
-              className="col-span-full flex justify-center"
-            >
-              <div style={{ width: '100%', maxWidth: '420px' }}>
+          {/* Award grid:
+              Row 1: MVP (full width)
+              Row 2: Atacante | Defensor | Apoiador
+              Row 3: Snipador (full width) */}
+          <div className="grid grid-cols-3 gap-8 w-full px-2">
+
+            {/* MVP — linha inteira */}
+            <div className="col-span-3 flex justify-center">
+              <div className="w-full max-w-sm">
                 <AwardCard {...mvp} />
               </div>
-            </motion.div>
+            </div>
 
-            {/* Remaining awards */}
-            {rest.map((award) => (
-              <AwardCard key={award.title} {...award} />
-            ))}
-          </motion.div>
+            {/* Atacante · Defensor · Apoiador */}
+            <AwardCard {...atacante} />
+            <AwardCard {...defensor} />
+            <AwardCard {...apoiador} />
+
+            {/* Snipador — linha inteira */}
+            <div className="col-span-3 flex justify-center">
+              <div className="w-full max-w-sm">
+                <AwardCard {...snipador} />
+              </div>
+            </div>
+
+          </div>
 
         </div>
       </section>

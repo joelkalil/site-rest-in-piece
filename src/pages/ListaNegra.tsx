@@ -1,8 +1,6 @@
 import { motion } from 'framer-motion'
 import PageWrapper from '../components/PageWrapper'
 
-const BASE = '/images/lista_negra'
-
 const listaNegraNames = [
   'Dark x Haavoc',
   'Botelho',
@@ -53,7 +51,7 @@ function TraitorCard({ name }: TraitorCardProps) {
   return (
     <motion.div
       variants={cardVariants}
-      whileHover={{ scale: 1.03 }}
+      whileHover={{ scale: 1.03, borderColor: '#cc3333', boxShadow: '0 0 12px rgba(204,51,51,0.4)' }}
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
       style={{
         background: 'rgba(40,0,0,0.8)',
@@ -65,17 +63,6 @@ function TraitorCard({ name }: TraitorCardProps) {
         justifyContent: 'center',
         gap: '8px',
         cursor: 'default',
-        transition: 'border-color 0.2s, box-shadow 0.2s',
-      }}
-      onHoverStart={(e) => {
-        const el = e.target as HTMLElement
-        el.style.borderColor = '#cc3333'
-        el.style.boxShadow = '0 0 12px rgba(204,51,51,0.4)'
-      }}
-      onHoverEnd={(e) => {
-        const el = e.target as HTMLElement
-        el.style.borderColor = 'rgba(180,0,0,0.5)'
-        el.style.boxShadow = 'none'
       }}
     >
       <span style={{ fontSize: '0.75rem', opacity: 0.6 }}>💀</span>
@@ -97,13 +84,13 @@ function TraitorCard({ name }: TraitorCardProps) {
 
 export default function ListaNegra() {
   return (
-    <PageWrapper overlayColor="rgba(80,0,0,0.75)">
+    <PageWrapper bgImage="/images/lista_negra/background.png" overlayColor="rgba(0,0,0,0.70)">
       <section className="min-h-screen px-4 py-24">
         <div className="max-w-5xl mx-auto flex flex-col items-center gap-10">
 
           {/* Hero art */}
           <motion.img
-            src={`${BASE}/lista_negra.png`}
+            src="/images/lista_negra/lista_negra.png"
             alt="Traidor é Pior que Inimigo"
             className="lista-negra-art w-full object-contain"
             style={{ maxHeight: '420px' }}
