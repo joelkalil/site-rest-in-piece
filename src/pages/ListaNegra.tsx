@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import PageWrapper from '../components/PageWrapper'
 
+const BASE = '/images/lista_negra'
+
 const listaNegraNames = [
   'Dark x Haavoc',
   'Botelho',
@@ -101,7 +103,7 @@ export default function ListaNegra() {
 
           {/* Hero art */}
           <motion.img
-            src="/images/lista_negra.png"
+            src={`${BASE}/lista_negra.png`}
             alt="Traidor é Pior que Inimigo"
             className="lista-negra-art w-full object-contain"
             style={{ maxHeight: '420px' }}

@@ -3,6 +3,8 @@ import PageWrapper from '../components/PageWrapper'
 import SectionTitle from '../components/SectionTitle'
 import GoldDivider from '../components/GoldDivider'
 
+const BASE = '/images/staff'
+
 interface StaffMember {
   name: string
   image: string
@@ -12,7 +14,7 @@ interface StaffMember {
 const members: StaffMember[] = [
   {
     name: 'RiPaDo By DeusBolado',
-    image: '/images/staff_fundador.png',
+    image: `${BASE}/staff_fundador.png`,
     paragraphs: [
       'Renan, o nome por trás da conta RiPaDo By DeusBolado, mas conhecido por todos simplesmente como Bolado.',
       'Um nick que ecoa. Polêmico, intenso, impossível de ignorar. Odiado por uns, respeitado por outros, mas nunca esquecido.',
@@ -23,7 +25,7 @@ const members: StaffMember[] = [
   },
   {
     name: 'Senhor Oblivion',
-    image: '/images/staff_staff.png',
+    image: `${BASE}/staff_staff.png`,
     paragraphs: [
       'Paulo, ex-jogador da Corra, não foi apenas mais um nome no jogo, foi o responsável por uma decisão que mudou completamente a trajetória de um BR inteiro.',
       'Quando escolheu se juntar à Rest In Peace, não foi só uma transferência. Foi um movimento estratégico que redefiniu rumos, alianças e o equilíbrio do jogo.',
@@ -35,7 +37,7 @@ const members: StaffMember[] = [
   },
   {
     name: 'Livioprofight',
-    image: '/images/staff_ex_lider.png',
+    image: `${BASE}/staff_ex_lider.png`,
     paragraphs: [
       'Livioprofight, conhecido por muitos como Livio ou Glivio. Um nome que atravessa gerações dentro do Tribal Wars. Hoje é referência e já era no passado.',
       'Carregou nicks que marcaram época como Hienahahaha e Prince of Peace, mas independente do nick o impacto é o mesmo.',
@@ -47,7 +49,7 @@ const members: StaffMember[] = [
   },
   {
     name: 'Farofa Monstro',
-    image: '/images/staff_ex_lider_2.png',
+    image: `${BASE}/staff_ex_lider_2.png`,
     paragraphs: [
       'Todo grupo tem aquele cara que deixa marca. Na RIP, esse nome vem acompanhado de respeito… e de algumas zoeiras inevitáveis.',
       'Rafael, conhecido como o "carequinha da equipe", ele nunca fugiu das piadas, pelo contrário, abraçou o título. Afinal, como diziam dentro da tribo: "É do careca que eles gostam" — e não era só meme, era reconhecimento disfarçado.',

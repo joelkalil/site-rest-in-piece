@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import PageWrapper from '../components/PageWrapper'
 import { awards, type Award } from '../data/awards'
 
-const BASE = '/images/hall%20da%20fama'
+const BASE = '/images/hall_da_fama'
 
 const containerVariants = {
   hidden: {},

@@ -8,7 +8,7 @@ interface RipadoMember {
   file: string | null
 }
 
-const BASE = '/images/ripados%20oficiais'
+const BASE = '/images/ripados_oficiais'
 
 function imgSrc(file: string): string {
   return `${BASE}/${encodeURIComponent(file)}`

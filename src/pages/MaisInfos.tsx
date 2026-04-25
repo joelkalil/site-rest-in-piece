@@ -4,7 +4,7 @@ import PageWrapper from '../components/PageWrapper'
 import SectionTitle from '../components/SectionTitle'
 import GoldDivider from '../components/GoldDivider'
 
-const BASE = '/images/mais%20infos'
+const BASE = '/images/mais_infos'
 const SHIRT_IMAGES = ['blusas_1.jpg', 'blusas_2.jpg']
 const PIX_KEY = '21982861956'
 
